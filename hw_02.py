@@ -198,11 +198,9 @@ def fibonacci_numbers():
 
     while True:
         yield last + current
-        buff = last
-        last = current
-        current += buff
+        last, current = current, last+current
 
 
-# for i in fibonacci_numbers():
-#     print(i)
+for i in fibonacci_numbers():
+    print(i)
 
