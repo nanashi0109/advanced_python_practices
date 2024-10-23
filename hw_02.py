@@ -112,3 +112,97 @@ print("---Task 14---\n", array_14)
 array_14 = reduce(lambda x, y: f"{x} {y}", map(lambda x: x.upper(), filter(lambda x: len(x) % 2 == 0, array_14)))
 print(array_14)
 
+
+# -----------
+
+
+# Task 1.1
+def infinity_number_5():
+    number = 5
+    while True:
+        yield number
+        number += 5
+
+
+# for i in infinity_number_5():
+#     print(i)
+
+
+# Task 1.2
+def squares_all_int():
+    number = 1
+    while True:
+        yield number ** 2
+        number += 1
+
+
+# for i in squares_all_int():
+#     print(i)
+
+
+# Task 1.3
+def range_without_multiplicity_3(end):
+    number = 1
+    while number < end:
+        yield number
+        number += 1
+        if number % 3 == 0:
+            number += 1
+
+
+# for i in range_without_multiplicity_3(10):
+#     print(i)
+
+
+# Task 1.4
+def substrings_of_string(string, length):
+    number = 0
+    while number+2 < len(string):
+        yield string[number: number+length]
+        number += 1
+
+
+# for i in substrings_of_string("abcdefgi", 3):
+#     print(i)
+
+
+# Task 1.5
+def range_2(start, end):
+    number = start
+    while number <= end:
+        yield number
+        number += 2
+
+
+# for i in range_2(1, 10):
+#     print(i)
+
+
+# Task 1.6
+def infinity_random_number():
+    while True:
+        yield randint(0, 100)
+
+
+# for i in infinity_random_number():
+#     print(i)
+
+
+# Task 1.7
+def fibonacci_numbers():
+    last = 0
+    current = 1
+
+    yield last
+    yield current
+
+    while True:
+        yield last + current
+        buff = last
+        last = current
+        current += buff
+
+
+# for i in fibonacci_numbers():
+#     print(i)
+
